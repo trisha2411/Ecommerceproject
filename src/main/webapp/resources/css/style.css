@@ -1,0 +1,97 @@
+@CHARSET "ISO-8859-1";
+
+.trisha-content .tr-item-img 
+{
+	margin-bottom:20px;
+}
+.tr-container
+{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.tr-row
+{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.tr-radio
+{
+	align:center;
+}
+
+.trisha-content .tr-item:hover
+{
+	border:2px solid #400040;
+	border-radius:3px;
+}
+.trisha-content .tr-item
+{
+	border:2px solid #ffffff;
+	 width:32%;
+	  height:250px; 
+	  float:left;
+}
+.trisha-footer
+{
+	margin-top:10px;
+	padding-top:30px;
+	padding-bottom:10px;
+	background:#202020;
+	color:white;
+}
+.trisha-content
+{
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+
+
+.tr-navbar li a:hover
+{
+	background:none; 
+	
+	
+}
+.trisha-navbar .navbar-nav .active a
+{
+	background:#3498db;
+	color:white;
+	
+}
+
+.trisha-navbar .trisha-cart
+{
+	padding-left:10px;
+	border-left:1px solid #969696;
+}
+
+.trisha-navbar .trisha-form-btn
+{
+	margin-right:8px;
+}
+.trisha-navbar .trisha-btn-car
+{
+	background: #3498db;
+	border-radius:3px;
+	color:white;
+} 
+.trisha-slider
+{
+	
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top:-20px;
+	
+}
+.bodyleft .trisha-slider .container .tr-caro
+{
+	float:left;
+	width:76%;
+	padding:1%;
+	
+}
+
+
+
+	

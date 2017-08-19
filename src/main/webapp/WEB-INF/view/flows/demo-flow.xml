@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <flow xmlns="http://www.springframework.org/schema/webflow"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                  http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+                  
+ <var name="shippingAddress" class="com.niit.model.ShippingAddress"/>
+<var name="paymentMode" class="com.niit.model.PaymentMode"/>
+<var name="orders" class="com.niit.model.Orders"/>
+
+<on-start>
+	<evaluate expression="orderWebflow.initFlow()" result="flowScope.orders"/>
+</on-start>
+
+
+<view-state id="start" view="page1.jsp" model="shippingAddress" >
+		<transition on="event1" to="shipDetails"></transition>
+	</view-state>
+	
+	<action-state id="shipDetails">
+		<evaluate expression="orderWebflow.addShippingAddress(flowScope.orders,shippingAddress)">
+	</evaluate>
+	<transition on="success" to="viewPaymentPage"></transition>
+</action-state>
+	
+	<view-state id="viewPaymentPage" view="page2.jsp" model="paymentMode"> 
+	<transition on="event2" to="orderconfirm"></transition>
+	</view-state>
+	
+	<action-state id="orderconfirm">
+	<evaluate expression="orderWebflow.addPaymentMethod(flowScope.orders,paymentMode)">
+	</evaluate>
+	<transition on="success" to="page3">
+	</transition>
+	</action-state>
+	
+	<view-state id="page3" view="page3.jsp" model="orders">
+	<transition on="event3" to="ThanksPage"></transition>	
+	</view-state> 
+	<action-state id="ThanksPage">
+	<evaluate expression="orderWebflow.addOrder(flowScope.orders)"></evaluate>
+	<transition on="success" to="thanks">
+	</transition>
+	</action-state>
+	
+	<view-state id="thanks" view="review.jsp">
+	</view-state>
+
+
+
+                  
+</flow>
